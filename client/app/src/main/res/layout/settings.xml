@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="config" type="com.android.example.devsummit.archdemo.config.DemoConfig"/>
+    </data>
+    <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView app:layout_row="0"
+                  app:layout_column="0"
+                  android:text="@string/settings_user_id"/>
+        <EditText app:layout_row="0"
+                  app:layout_column="1"
+                  android:inputType="number"
+                  tools:text="1"
+                  android:id="@+id/user_id"
+                  app:layout_columnWeight="1"
+                  android:text='@{"" + config.userId}'/>
+        <TextView app:layout_row="1"
+                  app:layout_column="0"
+                  android:text="@string/settings_new_post_retry_count"/>
+        <EditText app:layout_row="1"
+                  app:layout_column="1"
+                  android:inputType="number"
+                  tools:text="1"
+                  android:id="@+id/new_post_retry_count"
+                  app:layout_columnWeight="1"
+                  android:text='@{"" + config.newPostRetryCount}'/>
+        <TextView app:layout_row="2"
+                  app:layout_column="0"
+                  android:text="@string/settings_api_url"/>
+        <EditText app:layout_row="2"
+                  app:layout_column="1"
+                  tools:text="1"
+                  android:id="@+id/api_url"
+                  app:layout_columnWeight="1"
+                  android:text='@{config.apiUrl}'/>
+    </android.support.v7.widget.GridLayout>
+</layout>
