@@ -117,6 +117,7 @@ After installing ruby and Rails, you can start the server as follows:
 > cd server;
 > bundle install;
 > rake db:migrate RAILS_ENV=development;
+> rake rails:update:bin;
 ```
 This will install the dependencies of the application and also create the database.
 
